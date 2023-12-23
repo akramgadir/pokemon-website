@@ -1,0 +1,13 @@
+.random-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex: 1; */
+}
+
+.random-card-title {
+  flex: 1;
+}
+.random-card-img {
+  flex: 1;
+}

@@ -1,0 +1,9 @@
+.random {
+  display: flex;
+}
+
+.random-pokemon-cards {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
