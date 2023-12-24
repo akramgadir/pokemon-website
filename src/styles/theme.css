@@ -1,0 +1,21 @@
+:root {
+  --primary-color: rgba(10, 130, 200, 0.7);
+  --secondary-color: #63a0d6;
+  --tertiary-color: gold;
+}
+
+/* Typography */
+:root {
+  --font-family: "Arial", sans-serif;
+  --font-size: 16px;
+}
+
+/* Spacing */
+:root {
+  --spacing-unit: 8px;
+}
+
+/* Border Radius */
+:root {
+  --border-radius: 4px;
+}

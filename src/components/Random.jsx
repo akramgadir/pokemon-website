@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { getAllPokemon } from "../utils/api";
 import RandomCard from "./RandomCard";
+import './PokemonFont.css';
+
 
 import './Random.css'
 function Random() {
@@ -33,7 +35,7 @@ function Random() {
     return (
         <>
         <div className="random">
-            <h2 className='random-header'>Random Pokemon</h2>
+            <h2 className='random-header' style={{fontFamily: 'PokemonFont'}}>Random Pokemon</h2>
             <div className="random-pokemon-cards">
                 {randomPokemon.map((pokemon, index) => (
                     <RandomCard key={index} pokemon={pokemon} />

@@ -1,9 +1,13 @@
 .random {
   display: flex;
+  flex-direction: column;
+}
+
+.random-header {
+  align-self: center;
 }
 
 .random-pokemon-cards {
   display: flex;
   justify-content: center;
-  flex: 1;
 }

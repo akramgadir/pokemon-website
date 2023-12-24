@@ -1,5 +1,6 @@
 import React from 'react'
 import './RandomCard.css'
+import './PokemonFont.css';
 
 function RandomCard({ pokemon }) {
     return (
