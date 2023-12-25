@@ -1,12 +1,14 @@
 .random-card {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   background-color: var(--tertiary-color);
   border-radius: 7%;
   margin: 0.5rem 0.5rem;
   padding: 0.5rem;
+  box-shadow: 3px 3px 6px rgb(251, 255, 0.9);
   /* flex: 1; */
 }
 

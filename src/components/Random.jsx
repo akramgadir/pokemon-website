@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { getAllPokemon } from "../utils/api";
 import RandomCard from "./RandomCard";
 import '../styles/PokemonFont.css';
-
+import '@splidejs/splide/dist/css/splide.min.css';
+import {Splide, SplideSlide} from '@splidejs/react-splide'
 import './Random.css';
 
 function Random() {
@@ -56,9 +57,19 @@ function Random() {
                         <RandomCard key={index} pokemon={pokemon} />
                     ))}
                 </div>
+
+                <h2 className='random-header' style={{ fontFamily: 'PokemonFont, Arial, sans-serif' }}>Explore Pokemon</h2>
+                <Splide options={{ perPage: 4, rewind: true, gap: '0rem' }} className="explore-splide">
+                    {randomPokemon.map((pokemon, index) => (
+                        <SplideSlide key={index} >
+                            <RandomCard pokemon={pokemon} />
+                        </SplideSlide>
+                    ))}
+                </Splide>
             </div>
         </>
     );
+    
 }
 
 export default Random;
