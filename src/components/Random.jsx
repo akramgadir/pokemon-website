@@ -14,7 +14,7 @@ function Random() {
             const id = Math.floor(Math.random() * 1025);
             getAllPokemon(id)
                 .then(pokemon => {
-                    //adding a pokemon to the initially empty array with initialised every time this useState is called to update randomPokemon to an array of what we're displaying
+                    //adding a pokemon to the initially empty array with initialised every time this useState is called to update randomPokemon to an array of what we're displaying 
                     setRandomPokemon(prevPokemon => [...prevPokemon, pokemon]);
                 })
                 .catch(error => {
