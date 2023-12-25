@@ -1,8 +1,12 @@
 .random-card {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(255, 242, 197);
+  background-color: var(--tertiary-color);
+  border-radius: 7%;
+  margin: 0.5rem 0.5rem;
+  padding: 0.5rem;
   /* flex: 1; */
 }
 

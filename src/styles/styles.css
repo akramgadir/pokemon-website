@@ -2,7 +2,6 @@ body {
   font-family: var(--font-family);
   font-size: var(--font-size);
   background-color: var(--primary-color);
-  color: white;
 }
 
 .button {
@@ -11,4 +10,14 @@ body {
   padding: var(--spacing-unit) var(--spacing-unit * 2);
   border: none;
   border-radius: var(--border-radius);
+}
+
+h1 {
+  font-size: 5rem; /* Adjust the font size as needed */
+  margin-top: 1rem; /* Add margin to the top of h1 elements */
+}
+
+h2 {
+  font-size: 3rem; /* Adjust the font size as needed */
+  margin-top: 1rem; /* Add margin to the top of h1 elements */
 }

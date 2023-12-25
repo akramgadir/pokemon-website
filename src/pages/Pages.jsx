@@ -1,9 +1,10 @@
 import React from 'react'
 import Home from './Home'
+import '../styles/PokemonFont.css';
 
 function Pages() {
   return (
-    <div>
+    <div style={{fontFamily: 'Pokemon'}}>
         <Home />
     </div>
   )

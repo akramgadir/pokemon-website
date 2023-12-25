@@ -1,31 +1,46 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getAllPokemon } from "../utils/api";
 import RandomCard from "./RandomCard";
-import './PokemonFont.css';
+import '../styles/PokemonFont.css';
 
+import './Random.css';
 
-import './Random.css'
 function Random() {
     const [randomPokemon, setRandomPokemon] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        const fetchPokemon = async () => {
-            const fetchedPokemon = [];
-            for (let i = 0; i < 10; i++) {
-                const id = Math.floor(Math.random() * 1302);
-                try {
-                    const pokemon = await getAllPokemon(id);
-                    fetchedPokemon.push(pokemon);
-                } catch (error) {
+        const fetchRandomPokemon = () => {
+            const id = Math.floor(Math.random() * 1025);
+            getAllPokemon(id)
+                .then(pokemon => {
+                    //adding a pokemon to the initially empty array with initialised every time this useState is called to update randomPokemon to an array of what we're displaying
+                    setRandomPokemon(prevPokemon => [...prevPokemon, pokemon]);
+                })
+                .catch(error => {
                     console.error("Error fetching Pokemon:", error);
-                }
-            }
-            setRandomPokemon(fetchedPokemon);
-            setIsLoading(false);
+                });
         };
+        
 
-        fetchPokemon();
+        const fetchData = () => {
+    
+            const fetchPromises = [];
+            for (let i = 0; i < 6; i++) {
+                fetchPromises.push(fetchRandomPokemon());
+            }
+        
+            Promise.all(fetchPromises)
+                .then(() => {
+                    setIsLoading(false);
+                })
+                .catch(error => {
+                    console.error("Error fetching Pokemon:", error);
+                });
+        };
+        
+
+        fetchData();
     }, []);
 
     if (isLoading) {
@@ -34,14 +49,14 @@ function Random() {
 
     return (
         <>
-        <div className="random">
-            <h2 className='random-header' style={{fontFamily: 'PokemonFont'}}>Random Pokemon</h2>
-            <div className="random-pokemon-cards">
-                {randomPokemon.map((pokemon, index) => (
-                    <RandomCard key={index} pokemon={pokemon} />
-                ))}
+            <div className="random">
+                <h2 className='random-header' style={{ fontFamily: 'PokemonFont, Arial, sans-serif' }}>Random Pokemon</h2>
+                <div className="random-pokemon-cards">
+                    {randomPokemon.map((pokemon, index) => (
+                        <RandomCard key={index} pokemon={pokemon} />
+                    ))}
+                </div>
             </div>
-          </div>
         </>
     );
 }
