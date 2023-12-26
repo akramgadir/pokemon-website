@@ -1,12 +1,23 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./pages/Home";
-import Pages from "./pages/Pages";
+import Explore from './pages/Explore';
+import Navbar from './components/Navbar';
 
 
 
 function App() {
-  return <div>
-    <Pages />
-  </div>;
+  return 
+    <Router>
+      
+      <Navbar/>
+
+
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path="/Explore" element={<Explore />} />
+      </Routes>
+
+    </Router>
 }
 
 export default App;

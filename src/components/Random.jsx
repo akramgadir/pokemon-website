@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { getAllPokemon } from "../utils/api";
+import { getPokemonById } from "../utils/api";
 import RandomCard from "./RandomCard";
 import '../styles/PokemonFont.css';
 import '@splidejs/splide/dist/css/splide.min.css';
 import {Splide, SplideSlide} from '@splidejs/react-splide'
-import './Random.css';
+import '../styles/Random.css';
 
 function Random() {
     const [randomPokemon, setRandomPokemon] = useState([]);
@@ -13,7 +13,7 @@ function Random() {
     useEffect(() => {
         const fetchRandomPokemon = () => {
             const id = Math.floor(Math.random() * 1025);
-            getAllPokemon(id)
+            getPokemonById(id)
                 .then(pokemon => {
                     //adding a pokemon to the initially empty array with initialised every time this useState is called to update randomPokemon to an array of what we're displaying 
                     setRandomPokemon(prevPokemon => [...prevPokemon, pokemon]);

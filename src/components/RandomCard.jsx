@@ -1,5 +1,5 @@
 import React from 'react'
-import './RandomCard.css'
+import '../styles/RandomCard.css';
 import '../styles/PokemonFont.css';
 import '../styles/styles.css';
 import '@splidejs/splide/dist/css/splide.min.css';

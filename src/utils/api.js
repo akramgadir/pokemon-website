@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const getAllPokemon = (id) => {
+export const getPokemonById = (id) => {
   return axios
     .get(`https://pokeapi.co/api/v2/pokemon/${id}`)
     .then((response) => response.data); // Assuming the API returns the pokemon data directly
