@@ -6,7 +6,7 @@ import Navbar from './components/Navbar';
 
 
 function App() {
-  return 
+  return  (
     <Router>
       
       <Navbar/>
@@ -18,6 +18,7 @@ function App() {
       </Routes>
 
     </Router>
+  )
 }
 
 export default App;

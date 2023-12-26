@@ -1,13 +1,11 @@
 import { Link } from 'react-router-dom';
 import '../styles/Navbar.css'
-
+import '../index.css'
 
 const Navbar = () => {
   return (
 <>
-    <div>SHOW ME SOEMTHINGk</div>
-    <nav>
-        
+    <nav>        
         <Link to='/'>Home</Link>
     </nav>
 </>
