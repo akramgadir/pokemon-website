@@ -4,13 +4,21 @@ import '../styles/PokemonFont.css';
 import '../styles/styles.css';
 import '@splidejs/splide/dist/css/splide.min.css';
 
+
+function capitaliseFirstLetters(str) {
+    return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+
+  }
+
 function RandomCard({ pokemon }) {
     return (
         <>
         <div className='random-card'>
             
             <img className='random-card-img' src={pokemon.sprites.front_default} alt={pokemon.name}/>
-            <div className='random-card-title' style={{fontFamily: 'PixelFont, Arial, sans-serif'}}>{pokemon.name}</div>
+            <div className='random-card-title' style={{ fontFamily: 'PixelFont, Arial, sans-serif' }}>
+  {capitaliseFirstLetters(pokemon.name)}
+</div>
 
         </div>
         </>

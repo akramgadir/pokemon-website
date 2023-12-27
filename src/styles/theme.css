@@ -1,21 +1,36 @@
 :root {
-  --primary-color: rgba(10, 130, 200, 0.7);
-  --secondary-color: #63a0d6;
-  --tertiary-color: gold;
+  --primary-color: #3fa7d6; /* Bluey/green (updated to a bluish shade) */
+  --primary-light: #6fbdd9; /* Lighter shade of bluey/green (updated to a bluish shade) */
+  --primary-dark: #2d87a1; /* Darker shade of bluey/green (updated to a bluish shade) */
+
+  --secondary-color: #d4af37; /* Medium gold */
+  --secondary-light: #e6c46c; /* Lighter shade of gold */
+  --secondary-dark: #b28a2e; /* Darker shade of gold */
+
+  --tertiary-color: #8a2be2; /* Complementary purple */
+  --tertiary-light: #a476e6; /* Lighter shade of purple */
+  --tertiary-dark: #6f1db4; /* Darker shade of purple */
+
+  /* Very Dark Variations */
+  --primary-very-dark: #175c80; /* Very Dark Bluey/green (updated to a bluish shade) */
+  --secondary-very-dark: #704e0e; /* Very Dark Gold */
+  --tertiary-very-dark: #3c1053; /* Very Dark Purple */
+
+  /* Very Light Variations */
+  --primary-very-light: #a9d9ec; /* Very Light Bluey/green (updated to a bluish shade) */
+  --secondary-very-light: #ffecb3; /* Very Light Gold */
+  --tertiary-very-light: #d4b5ff; /* Very Light Purple */
 }
 
-/* Typography */
 :root {
   --font-family: "PixelFont", "Arial", sans-serif;
   --font-size: 16px;
 }
 
-/* Spacing */
 :root {
   --spacing-unit: 8px;
 }
 
-/* Border Radius */
 :root {
   --border-radius: 4px;
 }

@@ -1,6 +1,6 @@
 nav {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
+  background-color: var(--primary-very-dark);
+  color: var(--primary-light);
   padding: 1rem;
   display: flex;
   justify-content: space-around;
@@ -8,6 +8,14 @@ nav {
 }
 
 nav a {
-  color: var(--tertiary-color);
+  color: var(--primary-light);
   font-size: xx-large;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--primary-very-light);
+  text-decoration: underline;
+  transition: right 1s ease;
+  cursor: pointer;
 }

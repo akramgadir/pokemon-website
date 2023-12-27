@@ -12,7 +12,7 @@ function Random() {
 
     useEffect(() => {
         const fetchRandomPokemon = () => {
-            const id = Math.floor(Math.random() * 1025);
+            const id = Math.floor((Math.random() * 1024) +1);
             getPokemonById(id)
                 .then(pokemon => {
                     //adding a pokemon to the initially empty array with initialised every time this useState is called to update randomPokemon to an array of what we're displaying 

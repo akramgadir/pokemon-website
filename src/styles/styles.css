@@ -5,7 +5,7 @@ body {
 }
 
 .button {
-  background-color: var(--secondary-color);
+  background-color: var(--tertiary-color);
   color: white;
   padding: var(--spacing-unit) var(--spacing-unit * 2);
   border: none;
