@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {Splide, SplideSlide} from '@splidejs/react-splide'
-import { getPokemonById, getPokemonList } from "../utils/api";
+import { getPokemonById, getPokemonList, getPokemonDetails } from "../utils/api";
 import PokemonCard from '../components/PokemonCard';
 
 const Explore = () => {
@@ -13,9 +13,13 @@ const Explore = () => {
   useEffect(() => {
       let offset=currentPage*limit;
       getPokemonList(offset, limit)
-        .then(data => {
-          setPokemonDisplayed(data.results)
-        })
+      .then(data => {
+        const fetchPromises = data.results.map(pokemon => getPokemonDetails(pokemon.url));
+        return Promise.all(fetchPromises);
+      })
+      .then(pokemonDetails => {
+        setPokemonDisplayed(pokemonDetails);
+      })
         .catch(error => {
           console.error("Error fetching Pokemon:", error);
         });

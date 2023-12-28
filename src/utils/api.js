@@ -12,6 +12,15 @@ export const getPokemonList = (offset, limit) => {
     .then((response) => response.data); // Assuming the API returns the pokemon data directly
 };
 
+export const getPokemonDetails = (url) => {
+  return axios
+    .then((response) => response.data)
+    .catch((error) => {
+      console.error("Error fetching Pokemon details:", error);
+      throw error;
+    });
+};
+
 // export const fetchTopics = () => {
 //   return axios
 //     .get(`https://akram-nc-news.onrender.com/api/topics`)
