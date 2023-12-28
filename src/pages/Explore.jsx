@@ -4,35 +4,32 @@ import { getPokemonById, getPokemonList } from "../utils/api";
 import PokemonCard from '../components/PokemonCard';
 
 const Explore = () => {
-  const [pokemonDisplayed, setPokemonDisplayed] = useState()
-  const [offset, setOffset] = useState(60)
+  const [pokemonDisplayed, setPokemonDisplayed] = useState([])
   const [currentPage, setCurrentPage] = useState(0)
   const [isLoading, setIsLoading] = useState(true);
+  const limit=60;
 
 
-  useEffect = () => {
-    const fetchPokemon = () => {
-      getPokemonList(currentPage, offset)
-        .then(pokemonDisplayed => {
-          setPokemonDisplayed(pokemonDisplayed)
+  useEffect(() => {
+      let offset=currentPage*limit;
+      getPokemonList(offset, limit)
+        .then(data => {
+          setPokemonDisplayed(data.results)
         })
         .catch(error => {
           console.error("Error fetching Pokemon:", error);
         });
 
-      }
+      }, [currentPage])
+    
+
+
+    const handleNextPage = () => {
+      setCurrentPage(currentPage => currentPage + 1)
     }
-
-
-    const fetchPokemonList = () => {
-      const fetchPromises = [];
-      
+    const handlePreviousPage = () => {
+      if (currentPage>0) {setCurrentPage(currentPage => currentPage - 1)}
     }
-
-
-
-
-
 
 
 
@@ -42,12 +39,14 @@ const Explore = () => {
             The Complete Pokedex
         </h2>
         <div>
-          {pokemonDisplayed.map((pokemonDisplayed, index) => (
-              <PokemonCard pokemonDisplayed={pokemon}/>
+          {pokemonDisplayed.map((pokemon, index) => (
+              <PokemonCard key={index} pokemon={pokemon}/>
 
           ))}
 
         </div>
+        <button onClick={handlePreviousPage}>Prev</button>
+        <button onClick={handleNextPage}>Next</button>
     </div>
   )
 }
