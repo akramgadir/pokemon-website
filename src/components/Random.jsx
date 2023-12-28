@@ -51,7 +51,7 @@ function Random() {
     return (
         <>
             <div className="random">
-                <h2 className='random-header' style={{ fontFamily: 'PokemonFont, Arial, sans-serif' }}>Random Pokemon</h2>
+                <h2 className='random-header' style={{ fontFamily: 'PokemonFont, Arial, sans-serif' }}>Random Pokemon Team</h2>
                 <div className="random-pokemon-cards">
                     {randomPokemon.map((pokemon, index) => (
                         <RandomCard key={index} pokemon={pokemon} />
@@ -59,7 +59,7 @@ function Random() {
                 </div>
 
                 <h2 className='random-header' style={{ fontFamily: 'PokemonFont, Arial, sans-serif' }}>Explore Pokemon</h2>
-                <Splide options={{ perPage: 4, rewind: true, gap: '0rem' }} className="explore-splide">
+                <Splide options={{ perPage: 1, rewind: true, gap: '0rem' }} className="random-splide">
                     {randomPokemon.map((pokemon, index) => (
                         <SplideSlide key={index} >
                             <RandomCard pokemon={pokemon} />
