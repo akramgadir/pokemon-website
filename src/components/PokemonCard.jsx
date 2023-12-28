@@ -3,6 +3,13 @@ import '../styles/PokemonCard.css';
 
 
 const PokemonCard = ({pokemon}) => {
+
+    function capitaliseFirstLetters(str) {
+        return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    
+      }
+    
+
   return (
     <>
     <div className='pokemon-card'>

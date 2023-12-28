@@ -20,4 +20,6 @@ h1 {
 h2 {
   font-size: 3rem; /* Adjust the font size as needed */
   margin-top: 1rem; /* Add margin to the top of h1 elements */
+  text-align: center;
+  color: var(--primary-very-light);
 }

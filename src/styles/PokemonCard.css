@@ -17,13 +17,18 @@
   justify-content: center;
   align-items: center;
   font-weight: bold;
+  text-align: center;
 }
 
 .pokemon-card-img {
   flex: 1;
 }
+
 .pokemon-card-img:hover {
-  scale: 1.03;
+  flex: 1;
+}
+.pokemon-card-img:hover {
+  scale: 1.1;
   transition: transform 1s ease;
 }
 
@@ -33,6 +38,6 @@
   color: var(--primary-very-dark);
   background-color: var(--primary-very-light);
 
-  scale: 1.05;
+  scale: 1.1;
   cursor: pointer;
 }
