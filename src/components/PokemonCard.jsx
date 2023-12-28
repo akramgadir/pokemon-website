@@ -1,10 +1,15 @@
 import React from 'react'
+import '../styles/PokemonCard.css';
+
 
 const PokemonCard = ({pokemon}) => {
   return (
     <>
-    <img src={pokemon.sprites.front_default}  alt={pokemon.name} />
-    <div>{pokemon.name}</div>
+    <div className='pokemon-card'>
+        <div className='pokemon-card-title'>{pokemon.name}
+        <img className='pokemon-card-img' src={pokemon.sprites.front_default}  alt={pokemon.name} />
+         </div>
+    </div>
     </>
   )
 }

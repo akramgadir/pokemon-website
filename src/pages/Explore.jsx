@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import {Splide, SplideSlide} from '@splidejs/react-splide'
 import { getPokemonById, getPokemonList, getPokemonDetails } from "../utils/api";
 import PokemonCard from '../components/PokemonCard';
+import '../styles/Explore.css';
+
 
 const Explore = () => {
   const [pokemonDisplayed, setPokemonDisplayed] = useState([])
@@ -42,15 +44,16 @@ const Explore = () => {
         <h2>
             The Complete Pokedex
         </h2>
-        <div>
+        <button onClick={handlePreviousPage}>Prev</button>
+        <button onClick={handleNextPage}>Next</button>
+        <div className='pokemon-card-container'>
           {pokemonDisplayed.map((pokemon, index) => (
               <PokemonCard key={index} pokemon={pokemon}/>
 
           ))}
 
         </div>
-        <button onClick={handlePreviousPage}>Prev</button>
-        <button onClick={handleNextPage}>Next</button>
+
     </div>
   )
 }
