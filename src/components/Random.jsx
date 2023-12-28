@@ -19,7 +19,7 @@ function Random() {
                     setRandomPokemon(prevPokemon => [...prevPokemon, pokemon]);
                 })
                 .catch(error => {
-                    console.error("Error fetching Pokemon:", error);
+                    console.error("Error fetching random Pokemon:", error);
                 });
         };
         

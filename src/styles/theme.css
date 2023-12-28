@@ -1,36 +1,31 @@
 :root {
-  --primary-color: #3fa7d6; /* Bluey/green (updated to a bluish shade) */
-  --primary-light: #6fbdd9; /* Lighter shade of bluey/green (updated to a bluish shade) */
-  --primary-dark: #2d87a1; /* Darker shade of bluey/green (updated to a bluish shade) */
+  /* Blue */
+  --primary-very-dark: #175c80; /* Very Dark Blue (shade you liked) */
+  --primary-color: #167083; /* Slightly darker and warmer blue */
+  --primary-light: #71a9c3; /* Lighter shade of blue */
+  --primary-dark: #0e485d; /* Even darker shade of blue */
+  --primary-very-light: #a1c9d4; /* Very Light Blue */
+  --primary-very-very-dark: #0a3547; /* Very Very Dark Blue */
 
+  /* Gold */
   --secondary-color: #d4af37; /* Medium gold */
-  --secondary-light: #e6c46c; /* Lighter shade of gold */
+  --secondary-light: #c9b877; /* In-between shade of gold */
   --secondary-dark: #b28a2e; /* Darker shade of gold */
+  --secondary-very-light: #e6c46c; /* Very Light Gold */
+  --secondary-very-dark: #704e0e;
 
+  /* Purple */
   --tertiary-color: #8a2be2; /* Complementary purple */
-  --tertiary-light: #a476e6; /* Lighter shade of purple */
+  --tertiary-light: #af81d6; /* In-between shade of purple */
   --tertiary-dark: #6f1db4; /* Darker shade of purple */
-
-  /* Very Dark Variations */
-  --primary-very-dark: #175c80; /* Very Dark Bluey/green (updated to a bluish shade) */
-  --secondary-very-dark: #704e0e; /* Very Dark Gold */
-  --tertiary-very-dark: #3c1053; /* Very Dark Purple */
-
-  /* Very Light Variations */
-  --primary-very-light: #a9d9ec; /* Very Light Bluey/green (updated to a bluish shade) */
-  --secondary-very-light: #ffecb3; /* Very Light Gold */
-  --tertiary-very-light: #d4b5ff; /* Very Light Purple */
+  --tertiary-very-light: #a476e6; /* Very Light Purple */
+  --tertiary-very-dark: #3c1053;
+  --tertiary-very-very-dark: #2b0b42; /* Very Very Dark Purple */
 }
 
 :root {
   --font-family: "PixelFont", "Arial", sans-serif;
   --font-size: 16px;
-}
-
-:root {
   --spacing-unit: 8px;
-}
-
-:root {
   --border-radius: 4px;
 }

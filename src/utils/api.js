@@ -6,6 +6,12 @@ export const getPokemonById = (id) => {
     .then((response) => response.data); // Assuming the API returns the pokemon data directly
 };
 
+export const getPokemonList = (offset, limit) => {
+  return axios
+    .get(`https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`)
+    .then((response) => response.data); // Assuming the API returns the pokemon data directly
+};
+
 // export const fetchTopics = () => {
 //   return axios
 //     .get(`https://akram-nc-news.onrender.com/api/topics`)

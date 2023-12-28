@@ -10,7 +10,7 @@
 .random-pokemon-cards {
   display: flex;
   justify-content: center;
-  background-color: var(--primary-dark);
+  background-color: var(--primary-light);
 
   border: 2px solid var(--primary-light); /* Border color */
   border-radius: 10px; /* Rounded corners */
