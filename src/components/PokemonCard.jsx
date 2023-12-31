@@ -7,8 +7,9 @@ import { getPokemonById } from '../utils/api';
 const PokemonCard = ({pokemon}) => {
 
   const [showModal, setShowModal] = useState(false)
+  const [pokemonData, setPokemonData] = useState(null)
 
-    function capitaliseFirstLetters(str) {
+  function capitaliseFirstLetters(str) {
         return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
     
       }
@@ -16,21 +17,20 @@ const PokemonCard = ({pokemon}) => {
       useEffect (() => {
         if (showModal) {
           getPokemonById(pokemon.id)
-          .then
-          (data => setPokemon(data))
+              .then(data => setPokemonData(data))
         }
 
-      }, [showModal, pokemonData.id])
+      }, [showModal, pokemon.id])
     
 
   return (
     <>
-    <div className='pokemon-card' onClick={()=>{setShowModal(true)}}>
-        <div className='pokemon-card-title'>{pokemon.name}
-        <img className='pokemon-card-img' src={pokemon.sprites.front_default}  alt={pokemon.name} />
-         </div>
-    </div>
-    <PokemonModal showModal={showModal} onClose={()=>setShowModal(false)} pokemonData={pokemonData}/>
+      <div className='pokemon-card' onClick={()=>{setShowModal(true)}}>
+          <div className='pokemon-card-title'>{pokemon.name}
+          <img className='pokemon-card-img' src={pokemon.sprites.front_default}  alt={pokemon.name} />
+          </div>
+      </div>
+      <PokemonModal showModal={showModal} onClose={()=>setShowModal(false)} pokemonData={pokemonData}/>
     </>
   )
 }
