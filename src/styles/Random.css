@@ -30,4 +30,6 @@
 
 .random-splide {
   /* max-width: 10%; */
+  justify-content: center;
+  align-items: center;
 }
