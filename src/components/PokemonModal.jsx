@@ -7,12 +7,17 @@ const PokemonModal = ({showModal, onClose, pokemonData}) => {
     if (!showModal || !pokemonData) {
         return null
     }
+
+    const abilities = pokemonData.abilities.map((ability) => ability.ability.name);
+    const moves = pokemonData.moves.map((move) => move.move.name);
   return (
-    <div className="pokemon-modal-container">
+    <div className={`pokemon-modal-container ${showModal ? 'show' : ''}`}>
         <div className="pokemon-modal">
-            <span className="close" onClick={onClose}>&times</span>
+            <span className="close-button" onClick={onClose}>&times;</span>
             <h2>{pokemonData.name}</h2>
-            <img src={pokemonData.sprites.front_default} alt={pokemonData.name} />
+            <img src={pokemonData.sprites.front_default} alt={pokemonData.name} className="pokemon-modal-image"/>
+            <div>Abilities: {abilities.join(', ')}</div>
+            <div>Moves: {moves.join(', ')}</div>
         </div>        
     </div>
   )

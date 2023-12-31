@@ -1,6 +1,21 @@
+.explore-page-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.explore-page-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .pokemon-card-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin: 0 1rem;
+}
+
+button {
+  width: 3rem;
 }

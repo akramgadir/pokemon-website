@@ -9,7 +9,7 @@ const Explore = () => {
   const [pokemonDisplayed, setPokemonDisplayed] = useState([])
   const [currentPage, setCurrentPage] = useState(0)
   const [isLoading, setIsLoading] = useState(true);
-  const limit=60;
+  const limit=66;
 
 
   useEffect(() => {
@@ -40,12 +40,15 @@ const Explore = () => {
 
 
   return (
-    <div>
+    <div className='explore-page-container'>
         <h2>
             The Complete Pokedex
         </h2>
-        <button onClick={handlePreviousPage}>Prev</button>
+        <span className='explore-page-buttons'>
+        <button onClick={handlePreviousPage} >Prev</button>
         <button onClick={handleNextPage}>Next</button>
+
+        </span>
         <div className='pokemon-card-container'>
           {pokemonDisplayed.map((pokemon, index) => (
               <PokemonCard key={index} pokemon={pokemon}/>

@@ -5,12 +5,23 @@ body {
   color: var(--primary-very-light);
 }
 
-.button {
-  background-color: var(--tertiary-color);
-  color: white;
+button {
+  background-color: var(--tertiary-light);
+  color: var(--tertiary-very-dark);
+  font-weight: bold;
   padding: var(--spacing-unit) var(--spacing-unit * 2);
   border: none;
   border-radius: var(--border-radius);
+
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--tertiary-color);
+  animation: bounce 0.5s ease infinite;
 }
 
 h1 {
@@ -23,4 +34,14 @@ h2 {
   margin-top: 1rem; /* Add margin to the top of h1 elements */
   text-align: center;
   color: var(--primary-very-light);
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateX(0.1em);
+  }
+  50% {
+    transform: translateX(-0.1em);
+  }
 }
