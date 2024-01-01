@@ -21,6 +21,14 @@ export const getPokemonDetails = (url) => {
       throw error;
     });
 };
+
+export const getPokemonType = () => {
+  return axios.get(`https://pokeapi.co/api/v2/type`).catch((error) => {
+    console.error("Error fetching Pokémon types:", error);
+    throw error;
+  });
+};
+
 //patch example
 // export const updateVotes = (article_id, newVoteCount) => {
 //   return axios

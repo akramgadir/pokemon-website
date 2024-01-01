@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import '../styles/PokemonModal.css';
+import { type } from "@testing-library/user-event/dist/type";
 
 const PokemonModal = ({showModal, onClose, pokemonData}) => {
     
