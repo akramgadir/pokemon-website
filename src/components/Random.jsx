@@ -24,22 +24,37 @@ function Random() {
         };
         
 
-        const fetchData = () => {
+        // const fetchData = () => {
     
-            const fetchPromises = [];
+        //     const fetchPromises = [];
+        //     for (let i = 0; i < 6; i++) {
+        //         fetchPromises.push(fetchRandomPokemon());
+        //     }
+        
+        //     Promise.all(fetchPromises)
+        //         .then(() => {
+        //             setIsLoading(false);
+        //         })
+        //         .catch(error => {
+        //             console.error("Error fetching Pokemon:", error);
+        //         });
+        // };
+        const fetchData = async () => {
+    
+            const fetchPokemon = [];
             for (let i = 0; i < 6; i++) {
-                fetchPromises.push(fetchRandomPokemon());
-            }
-        
-            Promise.all(fetchPromises)
-                .then(() => {
-                    setIsLoading(false);
-                })
-                .catch(error => {
+                try {
+                    let poke = await fetchRandomPokemon()
+                    fetchPokemon.push(poke);
+                }
+                catch(error) {
                     console.error("Error fetching Pokemon:", error);
-                });
-        };
-        
+                    
+                }
+            
+            }
+            setIsLoading(false)
+                };
 
         fetchData();
     }, []);
