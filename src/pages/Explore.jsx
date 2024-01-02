@@ -15,19 +15,19 @@ const Explore = () => {
   useEffect(() => {
       let offset=currentPage*limit;
       getPokemonList(offset, limit)
-      .then(data => {
-        const fetchPromises = data.results.map(pokemon => getPokemonDetails(pokemon.url));
-        return Promise.all(fetchPromises);
-      })
-      .then(pokemonDetails => {
-        setPokemonDisplayed(pokemonDetails);
-      })
-        .catch(error => {
-          console.error("Error fetching Pokemon:", error);
-        });
+        .then(data => {
+          const fetchPromises = data.results.map(pokemon => getPokemonDetails(pokemon.url));
+          return Promise.all(fetchPromises);
+        })
+          .then(pokemonDetails => {
+            setPokemonDisplayed(pokemonDetails);
+          })
+            .catch(error => {
+              console.error("Error fetching Pokemon:", error);
+            });
 
-      }, [currentPage])
-    
+          }, [currentPage])
+        
 
 
     const handleNextPage = () => {

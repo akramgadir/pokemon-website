@@ -6,15 +6,11 @@ import { getPokemonByName } from '../utils/api';
 const SearchBar = () => {
     const [searchTerm, setSearchTerm] = useState('')
 
-
     const handleSearch = async () => {
-        console.log('this without an argument')
         const allPokes = await getPokemonByName('Caterpie')
         console.log(allPokes)
     };
       
-
-
     useEffect(()=> {
         
     },

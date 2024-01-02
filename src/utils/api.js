@@ -26,22 +26,21 @@ const handleSearch = async () => {
 };
 
 export const getPokemonByName = async (nameToFind) => {
-  let all = [];
+  let allPokemon = [];
   const firstPage = await axios
     .get(`https://pokeapi.co/api/v2/pokemon`)
     .then((response) => response.data);
-  all = firstPage.results;
-  let urlNextPage = firstPage.next;
-  while (urlNextPage) {
-    console.log("were running this: ");
+  allPokemon = firstPage.results;
+  let nextPageURL = firstPage.next;
+  while (nextPageURL) {
     const secondPage = await axios
-      .get(urlNextPage)
+      .get(nextPageURL)
       .then((response) => response.data);
     console.log("trial", secondPage);
-    all = [...all, ...secondPage.results];
-    urlNextPage = secondPage.next;
+    allPokemon = [...allPokemon, ...secondPage.results];
+    nextPageURL = secondPage.next;
   }
-  return all.find((e) => (e.name = nameToFind));
+  return allPokemon.find((e) => (e.name = nameToFind));
 };
 
 export const getPokemonDetails = (url) => {
