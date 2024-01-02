@@ -21,6 +21,7 @@ const Explore = () => {
       })
       .then(pokemonDetails => {
         setPokemonDisplayed(pokemonDetails);
+        setIsLoading(false)
       })
         .catch(error => {
           console.error("Error fetching Pokemon:", error);
@@ -45,10 +46,13 @@ const Explore = () => {
             The Complete Pokedex
         </h2>
         <span className='explore-page-buttons'>
+
         <button onClick={handlePreviousPage} >Prev</button>
         <button onClick={handleNextPage}>Next</button>
 
         </span>
+          { isLoading ?  (
+            <h2>Loading...</h2>) : null}
         <div className='pokemon-card-container'>
           {pokemonDisplayed.map((pokemon, index) => (
               <PokemonCard key={index} pokemon={pokemon}/>
