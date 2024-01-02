@@ -12,6 +12,19 @@ export const getPokemonList = (offset, limit) => {
     .then((response) => response.data);
 };
 
+export const getPokemonByName = (nameToFind) => {
+  if (!nameToFind) return null;
+
+  return axios
+    .get(`https://pokeapi.co/api/v2/pokemon/${nameToFind.toLowerCase()}`)
+    .then((response) => {
+      return response.data;
+    })
+    .catch((error) => {
+      console.error("Error fetching Pokemon by name:", error);
+      return null;
+    });
+};
 const handleSearch = async () => {
   let answer = await getPokemonByName("");
   let all = [];
@@ -25,23 +38,23 @@ const handleSearch = async () => {
   console.log("all", all);
 };
 
-export const getPokemonByName = async (nameToFind) => {
-  let allPokemon = [];
-  const firstPage = await axios
-    .get(`https://pokeapi.co/api/v2/pokemon`)
-    .then((response) => response.data);
-  allPokemon = firstPage.results;
-  let nextPageURL = firstPage.next;
-  while (nextPageURL) {
-    const secondPage = await axios
-      .get(nextPageURL)
-      .then((response) => response.data);
-    console.log("trial", secondPage);
-    allPokemon = [...allPokemon, ...secondPage.results];
-    nextPageURL = secondPage.next;
-  }
-  return allPokemon.find((e) => (e.name = nameToFind));
-};
+// export const getPokemonByName = async (nameToFind) => {
+//   let allPokemon = [];
+//   const firstPage = await axios
+//     .get(`https://pokeapi.co/api/v2/pokemon`)
+//     .then((response) => response.data);
+//   allPokemon = firstPage.results;
+//   let nextPageURL = firstPage.next;
+//   while (nextPageURL) {
+//     const secondPage = await axios
+//       .get(nextPageURL)
+//       .then((response) => response.data);
+//     console.log("trial", secondPage);
+//     allPokemon = [...allPokemon, ...secondPage.results];
+//     nextPageURL = secondPage.next;
+//   }
+//   return allPokemon.find((e) => (e.name = nameToFind));
+// };
 
 export const getPokemonDetails = (url) => {
   return axios
