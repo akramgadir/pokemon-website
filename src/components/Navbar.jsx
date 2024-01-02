@@ -6,11 +6,15 @@ import SearchBar from './SearchBar';
 const Navbar = () => {
   return (
 <>
-    <nav>        
-        <Link to='/'>Home</Link>
-        <Link to='/Explore'>Explore</Link>
-        <SearchBar/>
+    <nav className='navbar'>
+        <div className='links'>
+            <Link to='/'>Home</Link>
+            <Link to='/Explore'>Explore</Link>
+        </div>
+        <SearchBar className='search-bar' />
     </nav>
+
+
 </>
     )
 }

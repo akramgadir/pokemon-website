@@ -1,45 +1,40 @@
-import React, { useEffect, useState } from 'react'
-// import { getPokemonByName } from '../utils/api'
-import axios from 'axios';
+import React, { useState } from 'react';
 import { getPokemonByName } from '../utils/api';
+import PokemonModal from './PokemonModal';
 
 const SearchBar = () => {
     const [searchTerm, setSearchTerm] = useState('');
-    const [pokemonSearched, setPokemonSearched] = useState(null);
+    const [pokemonData, setPokemonData] = useState(null);
+    const [showModal, setShowModal] = useState(false);
 
     const handleSearch = async () => {
-      if (searchTerm.trim() === '') {
-        setPokemonSearched(null);
-        return null;
-      }
-  
-      try {
-        const pokemonData = await getPokemonByName(searchTerm);
-        setPokemonSearched(pokemonData);
-      } catch (error) {
-        console.error('Error searching for Pokemon:', error);
-        setPokemonSearched(null);
-      }
+        if (!searchTerm.trim() === '' || searchTerm === '?') {
+            alert("Please enter a Pokémon name");
+            return;
+        }
+
+        const data = await getPokemonByName(searchTerm);
+        if (data) {
+            setPokemonData(data);
+            setShowModal(true);
+        } else {
+            alert("That's not a Pokemon!");
+        }
     };
-  
-    useEffect(() => {
-      handleSearch();
-      console.log(pokemonSearched)
-    }, [searchTerm]);
 
+    return (
+        <>
+            <input
+                className='search-bar'
+                type="text"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                placeholder='Which Pokémon do you like...?'
+            />
+            <button onClick={handleSearch}>Search</button>
+            <PokemonModal showModal={showModal} onClose={() => setShowModal(false)} pokemonData={pokemonData} />
+        </>
+    );
+};
 
-  return (
-    <>
-    <input
-        type="text"
-        value={searchTerm}
-        onChange={(e)=>setSearchTerm(e.target.value)}
-        placeholder='Which pokemon do you like...?'
-    />
-    <button onClick={handleSearch}>Search</button>
-    <div></div>
-    </>
-  )
-}
-
-export default SearchBar
+export default SearchBar;

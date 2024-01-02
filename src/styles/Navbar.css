@@ -3,6 +3,7 @@ nav {
   color: var(--primary-light);
   padding: 1rem;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
@@ -11,6 +12,7 @@ nav a {
   color: var(--primary-light);
   font-size: xx-large;
   text-decoration: none;
+  margin: 0 1rem;
 }
 
 nav a:hover {
@@ -18,4 +20,13 @@ nav a:hover {
   text-decoration: underline;
   transition: right 1s ease;
   cursor: pointer;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+}
+
+.search-bar {
+  flex: 1;
 }

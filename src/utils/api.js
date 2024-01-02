@@ -25,18 +25,18 @@ export const getPokemonByName = (nameToFind) => {
       return null;
     });
 };
-const handleSearch = async () => {
-  let answer = await getPokemonByName("");
-  let all = [];
-  all = [...all, ...answer.results];
-  console.log(answer.results);
-  if (answer.next) {
-    const next = await getPokemonByName(answer.next);
-    console.log(next.results);
-    all = [...all, ...next.results];
-  }
-  console.log("all", all);
-};
+// const handleSearch = async () => {
+//   let answer = await getPokemonByName("");
+//   let all = [];
+//   all = [...all, ...answer.results];
+//   console.log(answer.results);
+//   if (answer.next) {
+//     const next = await getPokemonByName(answer.next);
+//     console.log(next.results);
+//     all = [...all, ...next.results];
+//   }
+//   console.log("all", all);
+// };
 
 // export const getPokemonByName = async (nameToFind) => {
 //   let allPokemon = [];
