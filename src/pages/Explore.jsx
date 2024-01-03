@@ -52,7 +52,7 @@ const Explore = () => {
 
         </span>
           { isLoading ?  (
-            <h2>Loading...</h2>) : null}
+            <h2>Loading... </h2>) : null}
         <div className='pokemon-card-container'>
           {pokemonDisplayed.map((pokemon, index) => (
               <PokemonCard key={index} pokemon={pokemon}/>
