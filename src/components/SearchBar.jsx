@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { getPokemonByName } from '../utils/api';
+import React, { useEffect, useState } from 'react';
+import { getAllAbilities, getAllTypes, getPokemonByName } from '../utils/api';
 import PokemonModal from './PokemonModal';
 
 const SearchBar = () => {
@@ -7,7 +7,23 @@ const SearchBar = () => {
     const [pokemonData, setPokemonData] = useState(null);
     const [showModal, setShowModal] = useState(false);
     const [isInputFocused, setIsInputFocused] = useState(false);
+    const [filtersMenuOpen, setFiltersMenuOpen] = useState(false)
 
+    const [types, setTypes] = useState([]);
+    const [abilities, setAbilities] = useState([]);
+    const [selectedType, setSelectedType] = useState('');
+    const [selectedAbility, setSelectedAbility] = useState('');
+
+    useEffect (() => {
+        const fetchPokemonFilterData = async () => {
+            const fetchedTypes = await getAllTypes();
+            const fetchedAbilities = await getAllAbilities();
+            setTypes(fetchedTypes)
+            setAbilities(fetchedAbilities)
+        }
+        fetchPokemonFilterData
+    }, [])
+    
     const handleSearch = async () => {
         if (!searchTerm.trim() === '' || searchTerm === '?') {
             alert("Please enter a Pokémon name");
@@ -21,15 +37,17 @@ const SearchBar = () => {
         } else {
             alert("That's not a Pokemon!");
         }
-
-
-
     };
         const handleKeyPress = (event) => {
           if (event.key === 'Enter' && isInputFocused) {
               handleSearch();
           }
       };
+
+    const toggleFiltersMenu = () => {
+        if (!filtersMenuOpen) {setFiltersMenuOpen(true)}
+        else setFiltersMenuOpen(false)
+    }
     return (
         <>
             <input
@@ -43,6 +61,8 @@ const SearchBar = () => {
                 onBlur={() => setIsInputFocused(false)}
 
             />
+            <button onClick={toggleFiltersMenu}>Filters</button>
+            {filtersMenuOpen ?  <div className='filters-menu'></div> : null}
             <button onClick={handleSearch}>Search</button>
             <PokemonModal showModal={showModal} onClose={() => setShowModal(false)} pokemonData={pokemonData} />
         </>

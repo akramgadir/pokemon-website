@@ -25,6 +25,17 @@ export const getPokemonByName = (nameToFind) => {
       return null;
     });
 };
+
+export const getAllTypes = async () => {
+  const response = await axios.get("https://pokeapi.co/api/v2/type");
+  return response.data.results;
+};
+
+export const getAllAbilities = async () => {
+  const response = await axios.get("https://pokeapi.co/api/v2/ability");
+  return response.data.results;
+};
+
 // const handleSearch = async () => {
 //   let answer = await getPokemonByName("");
 //   let all = [];
