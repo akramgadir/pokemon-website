@@ -21,7 +21,7 @@ const SearchBar = () => {
             setTypes(fetchedTypes)
             setAbilities(fetchedAbilities)
         }
-        fetchPokemonFilterData
+        fetchPokemonFilterData()
     }, [])
     
     const handleSearch = async () => {
@@ -62,7 +62,14 @@ const SearchBar = () => {
 
             />
             <button onClick={toggleFiltersMenu}>Filters</button>
-            {filtersMenuOpen ?  <div className='filters-menu'></div> : null}
+            {filtersMenuOpen ?  <div className='filters-menu'>
+                <ol>
+                    {types.map((type)=> {
+                        return <li key={type}>{type}</li>
+
+                    })}
+                </ol>
+            </div> : null}
             <button onClick={handleSearch}>Search</button>
             <PokemonModal showModal={showModal} onClose={() => setShowModal(false)} pokemonData={pokemonData} />
         </>
