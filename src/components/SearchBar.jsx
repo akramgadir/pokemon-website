@@ -11,8 +11,8 @@ const SearchBar = () => {
 
     const [types, setTypes] = useState([]);
     const [abilities, setAbilities] = useState([]);
-    const [selectedType, setSelectedType] = useState('');
-    const [selectedAbility, setSelectedAbility] = useState('');
+    const [selectedTypes, setSelectedTypes] = useState('');
+    const [selectedAbilities, setSelectedAbilities] = useState('');
 
     useEffect (() => {
         const fetchPokemonFilterData = async () => {
@@ -48,6 +48,15 @@ const SearchBar = () => {
         if (!filtersMenuOpen) {setFiltersMenuOpen(true)}
         else setFiltersMenuOpen(false)
     }
+
+    const handleTypeChange = (e) => {
+        if (e.target.value) {
+            setSelectedTypes([...selectedTypes, value])
+        }
+        else {
+            setSelectedTypes(selectedTypes.filter(type => type !== value))
+        }
+    }
     return (
         <>
             <input
@@ -61,14 +70,23 @@ const SearchBar = () => {
                 onBlur={() => setIsInputFocused(false)}
 
             />
-            <button onClick={toggleFiltersMenu}>Filters</button>
+            <button onClick={toggleFiltersMenu}>Types</button>
             {filtersMenuOpen ?  <div className='filters-menu'>
-                <ol>
+                <ul>
                     {types.map((type)=> {
-                        return <li key={type}>{type}</li>
+                        return <li key={type.name}>
+                            <input
+                                type="checkbox"
+                                id={type.name}
+                                value={type.name}
+                                onChange={handleTypeChange}
+                                checked={selectedTypes.includes(type.name)} 
+                            
+                            
+                            />{type.name}</li>
 
                     })}
-                </ol>
+                </ul>
             </div> : null}
             <button onClick={handleSearch}>Search</button>
             <PokemonModal showModal={showModal} onClose={() => setShowModal(false)} pokemonData={pokemonData} />
