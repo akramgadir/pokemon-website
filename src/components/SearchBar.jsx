@@ -50,13 +50,13 @@ const SearchBar = () => {
     }
 
     const handleTypeChange = (e) => {
-        if (e.target.value) {
-            setSelectedTypes([...selectedTypes, value])
+        if (e.target.checked) {
+            setSelectedTypes(prevTypes => [...prevTypes, e.target.value]);
+        } else {
+            setSelectedTypes(prevTypes => prevTypes.filter(type => type !== e.target.value));
         }
-        else {
-            setSelectedTypes(selectedTypes.filter(type => type !== value))
-        }
-    }
+    };
+    
     return (
         <>
             <input
