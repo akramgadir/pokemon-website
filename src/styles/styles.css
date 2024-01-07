@@ -6,7 +6,7 @@ body {
 }
 
 button {
-  background-color: var(--tertiary-light);
+  background-color: var(--tertiary-very-light);
   color: var(--tertiary-very-dark);
   font-weight: bold;
   padding: var(--spacing-unit) var(--spacing-unit * 2);
@@ -20,7 +20,7 @@ button {
 }
 
 button:hover {
-  background-color: var(--tertiary-color);
+  background-color: var(--tertiary-light);
   animation: bounce 0.5s ease infinite;
 }
 
@@ -39,9 +39,9 @@ h2 {
 @keyframes bounce {
   0%,
   100% {
-    transform: translateX(0.1em);
+    transform: translateX(0.08em);
   }
   50% {
-    transform: translateX(-0.1em);
+    transform: translateX(-0.08em);
   }
 }

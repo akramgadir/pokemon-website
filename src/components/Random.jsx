@@ -10,7 +10,12 @@ function Random() {
     const [randomPokemon, setRandomPokemon] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
+
+    
+
     useEffect(() => {
+        alert('PROJECT STATUS = in progress!\nEstimated completion date Feb 2024');
+
         const fetchRandomPokemon = () => {
             const id = Math.floor((Math.random() * 1024) +1);
             getPokemonById(id)
@@ -65,7 +70,9 @@ function Random() {
 
     return (
         <>
+        
             <div className="random">
+            <h2 className='random-header' style={{ fontFamily: 'PokemonFont, Arial, sans-serif' }}>PROJECT STATUS: IN PROGRESS</h2>
                 <h2 className='random-header' style={{ fontFamily: 'PokemonFont, Arial, sans-serif' }}>Random Pokemon Team</h2>
                 <div className="random-pokemon-cards">
                     {randomPokemon.map((pokemon, index) => (

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getAllAbilities, getAllTypes, getPokemonByName } from '../utils/api';
 import PokemonModal from './PokemonModal';
-
+import '../styles/SearchBar.css' 
 const SearchBar = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [pokemonData, setPokemonData] = useState(null);
@@ -59,6 +59,7 @@ const SearchBar = () => {
     
     return (
         <>
+        <div className='search-bar-container'>
             <input
                 className='search-bar'
                 type="text"
@@ -68,28 +69,29 @@ const SearchBar = () => {
                 placeholder='Which Pokémon do you like...?'
                 onFocus={() => setIsInputFocused(true)}
                 onBlur={() => setIsInputFocused(false)}
+                
+                />
+            <button className='types-button' onClick={toggleFiltersMenu}>Types</button>
 
-            />
-            <button onClick={toggleFiltersMenu}>Types</button>
-            {filtersMenuOpen ?  <div className='filters-menu'>
+            <button className='search-button' onClick={handleSearch}>Search</button>
+            <PokemonModal showModal={showModal} onClose={() => setShowModal(false)} pokemonData={pokemonData} />
+       </div>            {filtersMenuOpen ?  <div className='filters-menu'>
                 <ul>
                     {types.map((type)=> {
-                        return <li key={type.name}>
+                        return <li key={type.name} className='filter-item'>
                             <input
                                 type="checkbox"
                                 id={type.name}
                                 value={type.name}
                                 onChange={handleTypeChange}
                                 checked={selectedTypes.includes(type.name)} 
-                            
-                            
-                            />{type.name}</li>
-
-                    })}
+                                
+                                
+                                />{type.name}</li>
+                                
+                            })}
                 </ul>
             </div> : null}
-            <button onClick={handleSearch}>Search</button>
-            <PokemonModal showModal={showModal} onClose={() => setShowModal(false)} pokemonData={pokemonData} />
         </>
     );
 };
