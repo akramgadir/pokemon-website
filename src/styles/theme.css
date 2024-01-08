@@ -1,5 +1,5 @@
 :root {
-  /* Blue */
+  /* blues */
   --primary-very-dark: #175c80; /* Very Dark Blue (shade you liked) */
   --primary-color: #167083; /* Slightly darker and warmer blue */
   --primary-light: #71a9c3; /* Lighter shade of blue */
@@ -7,20 +7,20 @@
   --primary-very-light: #a1c9d4; /* Very Light Blue */
   --primary-very-very-dark: #0a3547; /* Very Very Dark Blue */
 
-  /* Gold */
+  /* golds */
   --secondary-color: #d4af37; /* Medium gold */
   --secondary-light: #c9b877; /* In-between shade of gold */
   --secondary-dark: #b28a2e; /* Darker shade of gold */
   --secondary-very-light: #e6c46c; /* Very Light Gold */
   --secondary-very-dark: #704e0e;
 
-  /* Purple */
-  --tertiary-color: #8a2be2; /* Complementary purple */
-  --tertiary-light: #af81d6; /* In-between shade of purple */
-  --tertiary-dark: #6f1db4; /* Darker shade of purple */
-  --tertiary-very-light: #a476e6; /* Very Light Purple */
+  /* purples */
+  --tertiary-color: #8a2be2;
+  --tertiary-light: #af81d6;
+  --tertiary-dark: #6f1db4;
+  --tertiary-very-light: #a476e6;
   --tertiary-very-dark: #3c1053;
-  --tertiary-very-very-dark: #2b0b42; /* Very Very Dark Purple */
+  --tertiary-very-very-dark: #2b0b42;
 }
 
 :root {
