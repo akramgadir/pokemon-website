@@ -12,7 +12,6 @@ function capitaliseFirstLetters(str) {
 
   }
 
-
 function RandomCard({ pokemon }) {
 
   const [showModal, setShowModal] = useState(false)
