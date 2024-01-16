@@ -24,13 +24,36 @@ ul {
   display: inline-block;
 }
 
-.types-button {
-  margin: 0.5rem 0.5rem;
-  width: auto;
-  height: 1.5rem;
-}
 .search-button {
   margin: 0.5rem 0.5rem;
   width: auto;
   height: 1.5rem;
+  background-color: var(--tertiary-very-light);
+  color: var(--tertiary-very-dark);
+  font-weight: bold;
+  padding: var(--spacing-unit) var(--spacing-unit * 2);
+  border: none;
+  border-radius: var(--border-radius);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+.search-button:hover {
+  background-color: var(--tertiary-light);
+}
+
+.types-button {
+  margin: 0.5rem 0.5rem;
+  width: auto;
+  height: 1.5rem;
+  background-color: var(--secondary-very-light);
+  color: var(--tertiary-very-dark);
+  font-weight: bold;
+  padding: var(--spacing-unit) var(--spacing-unit * 2);
+  border: none;
+  border-radius: var(--border-radius);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+.types-button:hover {
+  background-color: var(--secondary-light);
 }

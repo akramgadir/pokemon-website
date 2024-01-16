@@ -71,9 +71,10 @@ const SearchBar = () => {
                 onBlur={() => setIsInputFocused(false)}
                 
                 />
-            <button className='types-button' onClick={toggleFiltersMenu}>Types</button>
 
             <button className='search-button' onClick={handleSearch}>Search</button>
+            <button className='types-button' onClick={toggleFiltersMenu}>Types</button>
+
             <PokemonModal showModal={showModal} onClose={() => setShowModal(false)} pokemonData={pokemonData} />
        </div>            {filtersMenuOpen ?  <div className='filters-menu'>
                 <ul>

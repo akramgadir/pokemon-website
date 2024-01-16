@@ -1,14 +1,14 @@
+import React from 'react'
 import Random from '../components/Random'
 import '../styles/PokemonFont.css';
 import '../index.css'
-import Explore from './Explore';
 
-const Home = () => {
+const Randomizer = () => {
   return (
     <div>
-        <Explore/>
+      <Random/>
     </div>
   )
 }
 
-export default Home
+export default Randomizer

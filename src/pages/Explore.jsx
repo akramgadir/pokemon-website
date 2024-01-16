@@ -47,8 +47,8 @@ const Explore = () => {
         </h2>
         <span className='explore-page-buttons'>
 
-        <button onClick={handlePreviousPage} >Prev</button>
-        <button onClick={handleNextPage}>Next</button>
+        <button className='moving-button' onClick={handlePreviousPage} >Prev</button>
+        <button className='moving-button' onClick={handleNextPage}>Next</button>
 
         </span>
           { isLoading ?  (

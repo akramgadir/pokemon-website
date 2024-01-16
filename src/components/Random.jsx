@@ -80,7 +80,7 @@ function Random() {
                     ))}
                 </div>
 
-                <h2 className='random-header' style={{ fontFamily: 'PokemonFont, Arial, sans-serif' }}>Explore Pokemon</h2>
+                <h2 className='random-header' style={{ fontFamily: 'PokemonFont, Arial, sans-serif' }}>Explore the team</h2>
                 <Splide options={{ perPage: 1, rewind: true, gap: '0rem' }} className="random-splide">
                     {randomPokemon.map((pokemon, index) => (
                         <SplideSlide key={index} >
