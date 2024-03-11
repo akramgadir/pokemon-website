@@ -63,7 +63,7 @@ const PokemonModal = ({ showModal, onClose, pokemonData }) => {
                                 <tr key={index}>
                                     <td>{move.level}</td>
                                     <td>{move.name}</td>
-                                    <td>{move.type}</td>
+                                    <td>{move.type} &nbsp;</td>
                                     <td>{move.power}</td>
                                     <td>{move.pp}</td>
                                 </tr>
